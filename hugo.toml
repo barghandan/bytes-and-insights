@@ -84,7 +84,7 @@ buildExpired = false
   # Blog settings
   ShowReadingTime = true
   ShowShareButtons = true
-  ShareButtons = ["x", "linkedin", "reddit", "facebook", "whatsapp", "telegram"]
+  ShareButtons = ["x", "linkedin", "reddit", "facebook", "whatsapp", "telegram", "slack"]
   ShowPostNavLinks = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
