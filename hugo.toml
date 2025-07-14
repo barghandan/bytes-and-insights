@@ -1,0 +1,168 @@
+theme = "PaperMod"
+title = "Bytes & Insights"
+baseURL = "https://vahid.nl/"
+languageCode = "en-us"
+
+# Site description for SEO and feeds
+description = "A casual corner of the internet where I share the tech and AI stuff that catches my eye. Think of it as my digital notebook of cool discoveries and random thoughts."
+
+# Enable emoji support
+enableEmoji = true
+# Enable robots.txt generation
+enableRobotsTXT = true
+# Build drafts when running locally
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+# Configure pagination
+[pagination]
+  pagerSize = 10
+
+# Configure minification
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+# Configure markup settings for better code highlighting and TOC
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "github"
+
+# Configure taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# Configure the menu
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 20
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
+    weight = 30
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 40
+  [[menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/search/"
+    weight = 50
+
+# Configure output formats for search
+[outputs]
+  home = [ "HTML", "RSS", "JSON" ]
+
+# PaperMod specific parameters
+[params]
+  # Theme settings
+  defaultTheme = "dark" # Options: auto, dark, light
+  disableThemeToggle = false
+
+  # Blog settings
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShareButtons = ["x", "linkedin", "reddit", "facebook", "whatsapp", "telegram"]
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+  
+  # Hide footer elements
+  hideFooter = true
+  hideCopyright = true
+
+  # Analytics
+  googleAnalytics = "G-4NCJFPL8KC"
+
+# Homepage settings - Regular mode (homeInfoParams disabled for post-based homepage)
+# [params.homeInfoParams]
+#   Title = "Welcome to My AI Blog 👋"
+#   Content = "Exploring the intersection of artificial intelligence, technology, and innovation. Join me on this journey of discovery and learning."
+
+# Social icons (disabled)
+# [[params.socialIcons]]
+#   name = "twitter"
+#   url = "https://twitter.com/yourusername"
+
+# [[params.socialIcons]]
+#   name = "linkedin"
+#   url = "https://linkedin.com/in/yourusername"
+
+# [[params.socialIcons]]
+#   name = "github"
+#   url = "https://github.com/yourusername"
+
+# [[params.socialIcons]]
+#   name = "rss"
+#   url = "/index.xml"
+
+# Search functionality
+[params.fuseOpts]
+  isCaseSensitive = false
+  shouldSort = true
+  location = 0
+  distance = 1000
+  threshold = 0.4
+  minMatchCharLength = 0
+  keys = [ "title", "permalink", "summary", "content" ]
+
+# Configure custom CSS and assets
+[params.assets]
+  customCSS = ["css/custom.css"]
+  # favicon = "/favicon.ico"
+  # favicon16x16 = "/favicon-16x16.png"
+  # favicon32x32 = "/favicon-32x32.png"
+  # apple_touch_icon = "/apple-touch-icon.png"
+
+# Configure author info (disabled)
+# [params.author]
+#   name = "Your Name"
+#   email = "your@email.com"
+#   link = "https://yourwebsite.com"
+
+# SEO and social sharing
+[params.SEO]
+  images = ["seo-image.png"]
+
+# Cover image settings
+[params.cover]
+  hidden = true
+  hiddenInList = true
+  hiddenInSingle = true
+
+# Configure edit post links (if using Git-based workflow)
+[params.editPost]
+  URL = "https://github.com/yourusername/your-blog-repo/tree/main/content"
+  Text = "Suggest Changes"
+  appendFilePath = true

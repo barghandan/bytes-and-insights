@@ -1,0 +1,22 @@
+/* Aggressive overrides for post headings */
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  font-size: inherit !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
+}
+
+/* Specific reductions */
+.post-content h1 { font-size: 1.8rem !important; }
+.post-content h2 { font-size: 1.5rem !important; }
+.post-content h3 { font-size: 1.3rem !important; }
+.post-content h4 { font-size: 1.1rem !important; }
+.post-content h5 { font-size: 1rem !important; }
+.post-content h6 { font-size: 0.9rem !important; }

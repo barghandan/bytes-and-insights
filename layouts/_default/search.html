@@ -1,0 +1,111 @@
+{{- define "main" }}
+<div class="page-header">
+  <h1>{{ .Title }}</h1>
+</div>
+
+<div class="search-container">
+  <input type="search" id="searchInput" placeholder="Search posts..." class="search-input" autofocus>
+  <div id="searchResults"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  let fuse;
+
+  // Load search index
+  fetch('/index.json')
+    .then(response => response.json())
+    .then(data => {
+      const options = {
+        isCaseSensitive: {{ .Site.Params.fuseOpts.isCaseSensitive }},
+        shouldSort: {{ .Site.Params.fuseOpts.shouldSort }},
+        location: {{ .Site.Params.fuseOpts.location }},
+        distance: {{ .Site.Params.fuseOpts.distance }},
+        threshold: {{ .Site.Params.fuseOpts.threshold }},
+        minMatchCharLength: {{ .Site.Params.fuseOpts.minMatchCharLength }},
+        keys: {{ .Site.Params.fuseOpts.keys | jsonify }}
+      };
+      fuse = new Fuse(data, options);
+    });
+
+  // Search function
+  function performSearch(query) {
+    if (!fuse || !query.trim()) {
+      searchResults.innerHTML = '';
+      return;
+    }
+
+    const results = fuse.search(query);
+    
+    if (results.length === 0) {
+      searchResults.innerHTML = '<p>No results found.</p>';
+      return;
+    }
+
+    const html = results.map(result => {
+      const item = result.item;
+      return `
+        <article class="search-result">
+          <h3><a href="${item.permalink}">${item.title}</a></h3>
+          <p>${item.summary}</p>
+        </article>
+      `;
+    }).join('');
+
+    searchResults.innerHTML = html;
+  }
+
+  // Event listener
+  searchInput.addEventListener('input', (e) => {
+    performSearch(e.target.value);
+  });
+
+  // Auto-focus and search from URL params
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('q');
+  if (query) {
+    searchInput.value = query;
+    performSearch(query);
+  }
+});
+</script>
+
+<style>
+.search-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.search-result {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.search-result h3 a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.search-result h3 a:hover {
+  text-decoration: underline;
+}
+
+.search-result p {
+  margin: 0;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+</style>
+
+{{- end }} 
