@@ -160,7 +160,7 @@ buildExpired = false
   hiddenInSingle = true
 
 # Configure edit post links (if using Git-based workflow)
-[params.editPost]
-  URL = "https://github.com/yourusername/your-blog-repo/tree/main/content"
-  Text = "Suggest Changes"
-  appendFilePath = true
+# [params.editPost]
+#  URL = "https://github.com/yourusername/your-blog-repo/tree/main/content"
+#  Text = "Suggest Changes"
+#  appendFilePath = true
