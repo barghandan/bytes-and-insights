@@ -1,7 +1,7 @@
 ---
 title: "Introducing Kiro: Amazon's AI-Powered IDE That Transforms Developer Workflow"
 slug: "introducing-kiro-amazon-ai-powered-ide-transforms-developer-workflow"
-summary: "```"
+summary: "Amazon's new AI IDE Kiro revolutionizes how developers write software through spec-driven development."
 date: 2025-07-21
 draft: false
 tags:
