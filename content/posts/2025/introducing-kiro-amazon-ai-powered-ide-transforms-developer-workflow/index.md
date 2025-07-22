@@ -8,12 +8,11 @@ tags:
   - ai
   - automation
 ---
+![Kiro Logo](0-kiro-circle.png)
 
 Kiro is Amazon's powerful new AI-powered IDE built on top of Visual Studio Code that's changing how developers approach software creation.
 
 <!--more-->
-
-![Kiro Logo](0-kiro-circle.png)
 
 Unlike typical AI coding assistants, Kiro focuses on structured specifications over conversational prompts, integrating artificial intelligence directly into your development workflow.
 
