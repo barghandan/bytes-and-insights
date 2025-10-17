@@ -20,7 +20,8 @@ You can pick up an AI coding session from where you left off, straight from the 
 
 That combo makes the CLI feel less like a chatbot and more like a tool you can actually wire into your dev workflow.
 
-### What Cursor CLI is in plain English
+### What Cursor CLI is in plain English:
+
 
 - A terminal tool that brings Cursor’s AI agent into your shell.
 - You keep the familiar chat-style help, but now you can list sessions, resume threads, and print structured output.
